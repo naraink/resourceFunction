@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="org.tmf.dsmapi.resourceFunction.model" v="4.2.4" status="GENERATED" sm="false" id="_14976884029901" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" abs="false" class="Response" v="true" m="false" rootElement="_14976884029901" id="_14976884030532">
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="statusCode" ft="false" id="_14976884030563">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;statusCode&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="body" ft="false" id="_14976884030574">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;body&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.List&lt;org.tmf.dsmapi.resourceFunction.model.RequestHeader&gt;" v="true" name="header" ft="false" id="_14976884030575">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;header&quot;)"/>
+            </jpa:basic>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="SAPRef" v="true" m="false" rootElement="_14976884029901" id="_14976884031006">
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="href" ft="false" id="_14976884031008">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;href&quot;)"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" ft="false" id="_14976884031007">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;id&quot;)"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="ResourceFunctionRef" v="true" m="false" rootElement="_14976884029901" id="_14976884031509">
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="href" ft="false" id="_149768840315111">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;href&quot;)"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" ft="false" id="_149768840315110">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;id&quot;)"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="Connectivity" v="true" m="false" rootElement="_14976884029901" id="_149768840320112">
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.ResourceFunctionRef" v="true" name="source" ft="false" id="_149768840320113">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;source&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.ResourceFunctionRef" v="true" name="target" ft="false" id="_149768840320114">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;target&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="relationship" ft="false" id="_149768840320115">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;relationship&quot;)"/>
+            </jpa:basic>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="ResourceFunction" v="true" m="false" rootElement="_14976884029901" id="_149768840323616">
+        <jpa:annotation e="true" n="@javax.ejb.Stateless"/>
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:inf e="true" n="java.io.Serializable"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="href" ft="false" id="_149768840323718">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;href&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="name" ft="false" id="_149768840323719">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;name&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="description" ft="false" id="_149768840323820">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;description&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="type" ft="false" id="_149768840323821">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;type&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="version" ft="false" id="_149768840323822">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;version&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="role" ft="false" id="_149768840323823">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;role&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.ResourceFunctionLocation" v="true" name="location" ft="false" id="_149768840323824">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;location&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.ResourceFunction.AutoModificationEnum" v="true" name="autoModification" ft="false" id="_149768840323825">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;autoModification&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="Long" v="true" name="priority" ft="false" id="_149768840323826">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;priority&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.ResourceFunction.StateEnum" v="true" name="state" ft="false" id="_149768840323827">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;state&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="subState" ft="false" id="_149768840323828">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;subState&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.List&lt;org.tmf.dsmapi.resourceFunction.model.ScheduleRef&gt;" v="true" name="schedule" ft="false" id="_149768840323829">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;schedule&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.List&lt;org.tmf.dsmapi.resourceFunction.model.SAPRef&gt;" v="true" name="sap" ft="false" id="_149768840324230">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;sap&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.ResourceFunctionSpecification" v="true" name="resourceFunctionSpecification" ft="false" id="_149768840324231">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;resourceFunctionSpecification&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.List&lt;org.tmf.dsmapi.resourceFunction.model.Characteristic&gt;" v="true" name="characteristic" ft="false" id="_149768840324232">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;characteristic&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.List&lt;org.tmf.dsmapi.resourceFunction.model.FeatureGroup&gt;" v="true" name="featureGroup" ft="false" id="_149768840324234">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;featureGroup&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.List&lt;org.tmf.dsmapi.resourceFunction.model.ResourceFunction&gt;" v="true" name="supportingResourceFunction" ft="false" id="_149768840324235">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;supportingResourceFunction&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.List&lt;org.tmf.dsmapi.resourceFunction.model.Connectivity&gt;" v="true" name="connectivity" ft="false" id="_149768840324336">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;connectivity&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.List&lt;org.tmf.dsmapi.resourceFunction.model.RelatedParty&gt;" v="true" name="relatedParty" ft="false" id="_149768840324337">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;relatedParty&quot;)"/>
+            </jpa:basic>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_149768840387699" v="true" name="feature" ft="false" id="_149768840324233">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;feature&quot;)"/>
+                <jpa:cascade>
+                    <jpa:cascade-persist/>
+                </jpa:cascade>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" name="id" ft="false" id="_149768840323717">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;id&quot;)"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="HealHealPolicy" v="true" m="false" rootElement="_14976884029901" id="_149768840327738">
+        <jpa:annotation e="true" n="@io.swagger.annotations.ApiModel(description=&quot;Reference to the policy being applied&quot;)"/>
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="href" ft="false" id="_149768840327740">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;href&quot;)"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" ft="false" id="_149768840327739">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;id&quot;)"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="ResourceFunctionSpecification" v="true" m="false" rootElement="_14976884029901" id="_149768840330941">
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="href" ft="false" id="_149768840330943">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;href&quot;)"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" ft="false" id="_149768840330942">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;id&quot;)"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="Monitor" v="true" m="false" rootElement="_14976884029901" id="_149768840335544">
+        <jpa:annotation e="true" n="@io.swagger.annotations.ApiModel(description=&quot;Monitor Object used to monitor long running transaction operations&quot;)"/>
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="type" ft="false" id="_149768840335546">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;type&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="state" ft="false" id="_149768840335547">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;state&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.Request" v="true" name="request" ft="false" id="_149768840335548">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;request&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.Response" v="true" name="response" ft="false" id="_149768840335549">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;response&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="href" ft="false" id="_149768840335550">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;href&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="sourceHref" ft="false" id="_149768840335551">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;sourceHref&quot;)"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" ft="false" id="_149768840335545">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;id&quot;)"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="MigrateLocation" v="true" m="false" rootElement="_14976884029901" id="_149768840339652">
+        <jpa:annotation e="true" n="@io.swagger.annotations.ApiModel(description=&quot;Target Location at which Resource Function is to be migrated&quot;)"/>
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="href" ft="false" id="_149768840339654">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;href&quot;)"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" ft="false" id="_149768840339653">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;id&quot;)"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="RelatedParty" v="true" m="false" rootElement="_14976884029901" id="_149768840342755">
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="href" ft="false" id="_149768840342757">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;href&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="role" ft="false" id="_149768840342758">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;role&quot;)"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" ft="false" id="_149768840342756">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;id&quot;)"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="NameValuePair" v="true" m="false" rootElement="_14976884029901" id="_149768840346459">
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="name" ft="false" id="_149768840346560">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;name&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="value" ft="false" id="_149768840346561">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;value&quot;)"/>
+            </jpa:basic>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="Scale" v="true" m="false" rootElement="_14976884029901" id="_149768840350062">
+        <jpa:annotation e="true" n="@io.swagger.annotations.ApiModel(description=&quot;Task Resource used to request scaling of a Resource Function&quot;)"/>
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="href" ft="false" id="_149768840350164">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;href&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.Scale.TypeEnum" v="true" name="type" ft="false" id="_149768840350165">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;type&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="aspectId" ft="false" id="_149768840350166">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;aspectId&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="Long" v="true" name="numberOfSteps" ft="false" id="_149768840350167">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;numberOfSteps&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.List&lt;org.tmf.dsmapi.resourceFunction.model.ScheduleRef&gt;" v="true" name="schedule" ft="false" id="_149768840350168">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;schedule&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.Scale.ScaleStatusEnum" v="true" name="scaleStatus" ft="false" id="_149768840350469">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;scaleStatus&quot;)"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" ft="false" id="_149768840350163">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;id&quot;)"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="Characteristic" v="true" m="false" rootElement="_14976884029901" id="_149768840353670">
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="name" ft="false" id="_149768840353671">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;name&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="value" ft="false" id="_149768840353672">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;value&quot;)"/>
+            </jpa:basic>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="Hub" v="true" m="false" rootElement="_14976884029901" id="_149768840357173">
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="callback" ft="false" id="_149768840357175">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;callback&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="query" ft="false" id="_149768840357176">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;query&quot;)"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" ft="false" id="_149768840357174">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;id&quot;)"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="ResourceFunctionLocation" v="true" m="false" rootElement="_14976884029901" id="_149768840361277">
+        <jpa:annotation e="true" n="@io.swagger.annotations.ApiModel(description=&quot;Location at which Resource Function is required&quot;)"/>
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="href" ft="false" id="_149768840361379">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;href&quot;)"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" ft="false" id="_149768840361278">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;id&quot;)"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="FeatureGroup" v="true" m="false" rootElement="_14976884029901" id="_149768840366280">
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="name" ft="false" id="_149768840366281">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;name&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.List&lt;org.tmf.dsmapi.resourceFunction.model.Characteristic&gt;" v="true" name="listOfCharacteristics" ft="false" id="_149768840366282">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;listOfCharacteristics&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.List&lt;org.tmf.dsmapi.resourceFunction.model.Feature&gt;" v="true" name="listOfFeatures" ft="false" id="_149768840366983">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;listOfFeatures&quot;)"/>
+            </jpa:basic>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="Migrate" v="true" m="false" rootElement="_14976884029901" id="_149768840373784">
+        <jpa:annotation e="true" n="@io.swagger.annotations.ApiModel(description=&quot;Task resource used to request migration of the Resource Function&quot;)"/>
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="href" ft="false" id="_149768840373886">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;href&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.Migrate.AdminStateModificationEnum" v="true" name="adminStateModification" ft="false" id="_149768840373887">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;adminStateModification&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.List&lt;org.tmf.dsmapi.resourceFunction.model.SAPRef&gt;" v="true" name="sapsToRemove" ft="false" id="_149768840373888">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;sapsToRemove&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.List&lt;org.tmf.dsmapi.resourceFunction.model.SAPRef&gt;" v="true" name="sapsToAdd" ft="false" id="_149768840374389">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;sapsToAdd&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="Long" v="true" name="priority" ft="false" id="_149768840374390">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;priority&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="startTime" ft="false" id="_149768840374391">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;startTime&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.Migrate.CompletionModeEnum" v="true" name="completionMode" ft="false" id="_149768840374392">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;completionMode&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.MigrateLocation" v="true" name="location" ft="false" id="_149768840374393">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;location&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.List&lt;org.tmf.dsmapi.resourceFunction.model.NameValuePair&gt;" v="true" name="characteristics" ft="false" id="_149768840374394">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;characteristics&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.Migrate.MigrateStatusEnum" v="true" name="migrateStatus" ft="false" id="_149768840374395">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;migrateStatus&quot;)"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" ft="false" id="_149768840373885">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;id&quot;)"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="RequestHeader" v="true" m="false" rootElement="_14976884029901" id="_149768840381996">
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="name" ft="false" id="_149768840382097">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;name&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="value" ft="false" id="_149768840382098">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;value&quot;)"/>
+            </jpa:basic>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="Feature" v="true" m="false" rootElement="_14976884029901" id="_149768840387699">
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="name" ft="false" id="_1497688403876100">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;name&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.List&lt;org.tmf.dsmapi.resourceFunction.model.Characteristic&gt;" v="true" name="listOfCharacteristics" ft="false" id="_1497688403877101">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;listOfCharacteristics&quot;)"/>
+            </jpa:basic>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="Heal" v="true" m="false" rootElement="_14976884029901" id="_1497688403945102">
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="href" ft="false" id="_1497688403945104">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;href&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="cause" ft="false" id="_1497688403945105">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;cause&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.Heal.DegreeOfHealingEnum" v="true" name="degreeOfHealing" ft="false" id="_1497688403946106">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;degreeOfHealing&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="healAction" ft="false" id="_1497688403946107">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;healAction&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.HealHealPolicy" v="true" name="healPolicy" ft="false" id="_1497688403950108">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;healPolicy&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="startTime" ft="false" id="_1497688403951109">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;startTime&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.List&lt;org.tmf.dsmapi.resourceFunction.model.NameValuePair&gt;" v="true" name="additionalParms" ft="false" id="_1497688403951110">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;additionalParms&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.Heal.HealStatusEnum" v="true" name="healStatus" ft="false" id="_1497688403956111">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;healStatus&quot;)"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" ft="false" id="_1497688403945103">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;id&quot;)"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="Request" v="true" m="false" rootElement="_14976884029901" id="_1497688404005112">
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="method" ft="false" id="_1497688404005113">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;method&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="to" ft="false" id="_1497688404005114">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;to&quot;)"/>
+                <jpa:column name="REQ_TO"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="body" ft="false" id="_1497688404005115">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;body&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.List&lt;org.tmf.dsmapi.resourceFunction.model.RequestHeader&gt;" v="true" name="header" ft="false" id="_1497688404006116">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;header&quot;)"/>
+            </jpa:basic>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" abs="false" class="ScheduleRef" v="true" m="false" rootElement="_14976884029901" id="_1497688404075117">
+        <jpa:annotation e="true" n="@javax.annotation.Generated(value={&quot;class io.swagger.codegen.languages.JavaJerseyServerCodegen&quot;}, date=&quot;2017-06-15T01:04:08.127Z&quot;)"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="href" ft="false" id="_1497688404075119">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;href&quot;)"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="org.tmf.dsmapi.resourceFunction.model.ResourceFunction" v="true" name="resourceFunctionConfig" ft="false" id="_1497688404076120">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;ResourceFunctionConfig&quot;)"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" ft="false" id="_1497688404075118">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonProperty(&quot;id&quot;)"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
+ * This file was generated by the Jeddict
+ */</jpa:snp>
+</jpa:entity-mappings>

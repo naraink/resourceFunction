@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="org.tmf.dsmapi.resourceFunction.genmodel" v="4.2.4" rws="_1497693857223391" cws="_1497693857223391" sm="false" xs="false" id="_1497688667391145" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" compositePrimaryKeyClass="CharacteristicPK" abs="false" class="Characteristic" v="true" m="false" rootElement="_1497688667391145" id="_1497688667391146">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="name" id="_1497688667395179">
+                <jpa:column name="NAME" unique="false" nullable="true" insertable="true" updatable="true" table="CHARACTERISTIC" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="value" id="_1497688667396180">
+                <jpa:column name="VALUE" unique="false" nullable="true" insertable="true" updatable="true" table="CHARACTERISTIC" length="255"/>
+            </jpa:basic>
+            <jpa:many-to-many own="true" collection-type="java.util.List" connected-entity-id="_1497688667392176" connected-attribute-id="_1497688667400325" v="true" name="featureCollection" id="_1497688667396181">
+                <jpa:join-table name="FEATURE_CHARACTERISTIC">
+                    <jpa:join-column name="LISTOFCHARACTERISTICS_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="FEATURE_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </jpa:join-table>
+            </jpa:many-to-many>
+            <jpa:many-to-many own="true" collection-type="java.util.List" connected-entity-id="_1497688667392175" connected-attribute-id="_1497688667400318" v="true" name="resourcefunctionCollection" id="_1497688667396182">
+                <jpa:join-table name="RESOURCEFUNCTION_CHARACTERISTIC">
+                    <jpa:join-column name="CHARACTERISTIC_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="RESOURCEFUNCTION_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </jpa:join-table>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_1497688667395178">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="CHARACTERISTIC"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="CHARACTERISTIC"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="MonitorPK" abs="false" class="Monitor" v="true" m="false" rootElement="_1497688667391145" id="_1497688667391147">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="href" id="_1497688667396184">
+                <jpa:column name="HREF" unique="false" nullable="true" insertable="true" updatable="true" table="MONITOR" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="sourcehref" id="_1497688667396185">
+                <jpa:column name="SOURCEHREF" unique="false" nullable="true" insertable="true" updatable="true" table="MONITOR" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="state" id="_1497688667396186">
+                <jpa:column name="STATE" unique="false" nullable="true" insertable="true" updatable="true" table="MONITOR" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="type" id="_1497688667396187">
+                <jpa:column name="TYPE" unique="false" nullable="true" insertable="true" updatable="true" table="MONITOR" length="255"/>
+            </jpa:basic>
+            <jpa:many-to-one primaryKey="false" connected-entity-id="_1497688667392174" connected-attribute-id="_1497688667400306" v="true" name="requestId" id="_1497688667396188">
+                <jpa:join-column name="REQUEST_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:many-to-one primaryKey="false" connected-entity-id="_1497688667392159" connected-attribute-id="_1497688667398240" v="true" name="responseId" id="_1497688667396189">
+                <jpa:join-column name="RESPONSE_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1497688667396183">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="MONITOR" length="255"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="MONITOR"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="HealPK" abs="false" class="Heal" v="true" m="false" rootElement="_1497688667391145" id="_1497688667391148">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="cause" id="_1497688667396191">
+                <jpa:column name="CAUSE" unique="false" nullable="true" insertable="true" updatable="true" table="HEAL" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="degreeofhealing" id="_1497688667396192">
+                <jpa:column name="DEGREEOFHEALING" unique="false" nullable="true" insertable="true" updatable="true" table="HEAL"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="healaction" id="_1497688667396193">
+                <jpa:column name="HEALACTION" unique="false" nullable="true" insertable="true" updatable="true" table="HEAL" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="healstatus" id="_1497688667396194">
+                <jpa:column name="HEALSTATUS" unique="false" nullable="true" insertable="true" updatable="true" table="HEAL"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="href" id="_1497688667396195">
+                <jpa:column name="HREF" unique="false" nullable="true" insertable="true" updatable="true" table="HEAL" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="starttime" id="_1497688667396196">
+                <jpa:column name="STARTTIME" unique="false" nullable="true" insertable="true" updatable="true" table="HEAL" length="255"/>
+            </jpa:basic>
+            <jpa:many-to-one primaryKey="false" connected-entity-id="_1497688667392154" connected-attribute-id="_1497688667397220" v="true" name="healpolicyId" id="_1497688667396198">
+                <jpa:join-column name="HEALPOLICY_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:many-to-many own="true" collection-type="java.util.List" connected-entity-id="_1497688667392160" connected-attribute-id="_1497688667398244" v="true" name="namevaluepairCollection" id="_1497688667396197">
+                <jpa:join-table name="HEAL_NAMEVALUEPAIR">
+                    <jpa:join-column name="HEAL_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="ADDITIONALPARMS_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </jpa:join-table>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1497688667396190">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="HEAL" length="255"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="HEAL"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyType="D" compositePrimaryKeyClass="MigrateSaprefPK" abs="false" class="MigrateSapref" v="true" m="false" rootElement="_1497688667391145" id="_1497688667391149">
+        <jpa:attributes>
+            <jpa:many-to-one optional="false" primaryKey="false" connected-entity-id="_1497688667392167" connected-attribute-id="_1497688667400277" v="true" name="migrate" id="_1497688667396202">
+                <jpa:join-column name="MIGRATE_ID" rc="ID" unique="false" nullable="true" insertable="false" updatable="false"/>
+            </jpa:many-to-one>
+            <jpa:many-to-one optional="false" primaryKey="false" connected-entity-id="_1497688667392166" connected-attribute-id="_1497688667400266" v="true" name="sapref" id="_1497688667396203">
+                <jpa:join-column name="SAPSTOREMOVE_ID" rc="ID" unique="false" nullable="true" insertable="false" updatable="false"/>
+            </jpa:many-to-one>
+            <jpa:many-to-one optional="false" primaryKey="false" connected-entity-id="_1497688667392166" connected-attribute-id="_1497688667400267" v="true" name="sapref1" id="_1497688667396204">
+                <jpa:join-column name="SAPSTOADD_ID" rc="ID" unique="false" nullable="true" insertable="false" updatable="false"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="String" v="true" name="migrateId" id="_1497688667396199">
+                <jpa:column name="MIGRATE_ID" unique="false" nullable="false" insertable="true" updatable="true" table="MIGRATE_SAPREF" length="255"/>
+            </jpa:id>
+            <jpa:id attribute-type="String" v="true" name="sapstoaddId" id="_1497688667396200">
+                <jpa:column name="SAPSTOADD_ID" unique="false" nullable="false" insertable="true" updatable="true" table="MIGRATE_SAPREF" length="255"/>
+            </jpa:id>
+            <jpa:id attribute-type="String" v="true" name="sapstoremoveId" id="_1497688667396201">
+                <jpa:column name="SAPSTOREMOVE_ID" unique="false" nullable="false" insertable="true" updatable="true" table="MIGRATE_SAPREF" length="255"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="MIGRATE_SAPREF"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="MigratelocationPK" abs="false" class="Migratelocation" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392150">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="href" id="_1497688667396206">
+                <jpa:column name="HREF" unique="false" nullable="true" insertable="true" updatable="true" table="MIGRATELOCATION" length="255"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667392167" connected-attribute-id="_1497688667400278" v="true" name="migrateCollection" id="_1497688667396207"/>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1497688667396205">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="MIGRATELOCATION" length="255"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="MIGRATELOCATION"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyType="D" compositePrimaryKeyClass="ResourcefunctionConnectivityPK" abs="false" class="ResourcefunctionConnectivity" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392151">
+        <jpa:attributes>
+            <jpa:many-to-one optional="false" primaryKey="false" connected-entity-id="_1497688667392173" connected-attribute-id="_1497688667400298" v="true" name="connectivity" id="_1497688667396210">
+                <jpa:join-column name="CONNECTIVITY_ID" rc="ID" unique="false" nullable="true" insertable="false" updatable="false"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="long" v="true" name="resourcefunctionId" id="_1497688667396208">
+                <jpa:column name="RESOURCEFUNCTION_ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTION_CONNECTIVITY"/>
+            </jpa:id>
+            <jpa:id attribute-type="long" v="true" name="connectivityId" id="_1497688667396209">
+                <jpa:column name="CONNECTIVITY_ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTION_CONNECTIVITY"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="RESOURCEFUNCTION_CONNECTIVITY"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="ResourcefunctionrefPK" abs="false" class="Resourcefunctionref" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392152">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="href" id="_1497688667396212">
+                <jpa:column name="HREF" unique="false" nullable="true" insertable="true" updatable="true" table="RESOURCEFUNCTIONREF" length="255"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667392173" connected-attribute-id="_1497688667400299" v="true" name="connectivityCollection" id="_1497688667396213"/>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667392173" connected-attribute-id="_1497688667400300" v="true" name="connectivityCollection1" id="_1497688667396214"/>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1497688667396211">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTIONREF" length="255"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="RESOURCEFUNCTIONREF"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="ResourcefunctionlocationPK" abs="false" class="Resourcefunctionlocation" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392153">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="href" id="_1497688667396216">
+                <jpa:column name="HREF" unique="false" nullable="true" insertable="true" updatable="true" table="RESOURCEFUNCTIONLOCATION" length="255"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667392175" connected-attribute-id="_1497688667400321" v="true" name="resourcefunctionCollection" id="_1497688667396217"/>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1497688667396215">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTIONLOCATION" length="255"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="RESOURCEFUNCTIONLOCATION"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="HealhealpolicyPK" abs="false" class="Healhealpolicy" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392154">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="href" id="_1497688667396219">
+                <jpa:column name="HREF" unique="false" nullable="true" insertable="true" updatable="true" table="HEALHEALPOLICY" length="255"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667391148" connected-attribute-id="_1497688667396198" v="true" name="healCollection" id="_1497688667397220"/>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1497688667396218">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="HEALHEALPOLICY" length="255"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="HEALHEALPOLICY"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="HubPK" abs="false" class="Hub" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392155">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="callback" id="_1497688667397222">
+                <jpa:column name="CALLBACK" unique="false" nullable="true" insertable="true" updatable="true" table="HUB" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="query" id="_1497688667397223">
+                <jpa:column name="QUERY" unique="false" nullable="true" insertable="true" updatable="true" table="HUB" length="255"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1497688667397221">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="HUB" length="255"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="HUB"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="SequencePK" abs="false" class="Sequence" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392156">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="Long" v="true" name="seqCount" id="_1497688667397225">
+                <jpa:column name="SEQ_COUNT" unique="false" nullable="true" insertable="true" updatable="true" table="SEQUENCE"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="seqName" id="_1497688667397224">
+                <jpa:column name="SEQ_NAME" unique="false" nullable="false" insertable="true" updatable="true" table="SEQUENCE" length="50"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="SEQUENCE"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyType="D" compositePrimaryKeyClass="FeaturegroupCharacteristicPK" abs="false" class="FeaturegroupCharacteristic" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392157">
+        <jpa:attributes>
+            <jpa:many-to-one optional="false" primaryKey="false" connected-entity-id="_1497688667392165" connected-attribute-id="_1497688667400263" v="true" name="featuregroup" id="_1497688667397228">
+                <jpa:join-column name="FEATUREGROUP_ID" rc="ID" unique="false" nullable="true" insertable="false" updatable="false"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="long" v="true" name="featuregroupId" id="_1497688667397226">
+                <jpa:column name="FEATUREGROUP_ID" unique="false" nullable="false" insertable="true" updatable="true" table="FEATUREGROUP_CHARACTERISTIC"/>
+            </jpa:id>
+            <jpa:id attribute-type="long" v="true" name="listofcharacteristicsId" id="_1497688667397227">
+                <jpa:column name="LISTOFCHARACTERISTICS_ID" unique="false" nullable="false" insertable="true" updatable="true" table="FEATUREGROUP_CHARACTERISTIC"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="FEATUREGROUP_CHARACTERISTIC"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="ScalePK" abs="false" class="Scale" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392158">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="aspectid" id="_1497688667397230">
+                <jpa:column name="ASPECTID" unique="false" nullable="true" insertable="true" updatable="true" table="SCALE" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="href" id="_1497688667397231">
+                <jpa:column name="HREF" unique="false" nullable="true" insertable="true" updatable="true" table="SCALE" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="numberofsteps" id="_1497688667397232">
+                <jpa:column name="NUMBEROFSTEPS" unique="false" nullable="true" insertable="true" updatable="true" table="SCALE"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="scalestatus" id="_1497688667397233">
+                <jpa:column name="SCALESTATUS" unique="false" nullable="true" insertable="true" updatable="true" table="SCALE"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="type" id="_1497688667397234">
+                <jpa:column name="TYPE" unique="false" nullable="true" insertable="true" updatable="true" table="SCALE"/>
+            </jpa:basic>
+            <jpa:many-to-many own="true" collection-type="java.util.List" connected-entity-id="_1497688667392170" connected-attribute-id="_1497688667400287" v="true" name="schedulerefCollection" id="_1497688667397235">
+                <jpa:join-table name="SCALE_SCHEDULEREF">
+                    <jpa:join-column name="SCALE_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="SCHEDULE_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </jpa:join-table>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1497688667397229">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="SCALE" length="255"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="SCALE"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="ResponsePK" abs="false" class="Response" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392159">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="body" id="_1497688667398237">
+                <jpa:column name="BODY" unique="false" nullable="true" insertable="true" updatable="true" table="RESPONSE" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="statuscode" id="_1497688667398238">
+                <jpa:column name="STATUSCODE" unique="false" nullable="true" insertable="true" updatable="true" table="RESPONSE" length="255"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667391147" connected-attribute-id="_1497688667396189" v="true" name="monitorCollection" id="_1497688667398240"/>
+            <jpa:many-to-many own="true" collection-type="java.util.List" connected-entity-id="_1497688667392164" connected-attribute-id="_1497688667399258" v="true" name="requestheaderCollection" id="_1497688667398239"/>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_1497688667397236">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESPONSE"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="RESPONSE"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="NamevaluepairPK" abs="false" class="Namevaluepair" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392160">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="name" id="_1497688667398242">
+                <jpa:column name="NAME" unique="false" nullable="true" insertable="true" updatable="true" table="NAMEVALUEPAIR" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="value" id="_1497688667398243">
+                <jpa:column name="VALUE" unique="false" nullable="true" insertable="true" updatable="true" table="NAMEVALUEPAIR" length="255"/>
+            </jpa:basic>
+            <jpa:many-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667391148" connected-attribute-id="_1497688667396197" v="true" name="healCollection" id="_1497688667398244"/>
+            <jpa:many-to-many own="true" collection-type="java.util.List" connected-entity-id="_1497688667392167" connected-attribute-id="_1497688667400276" v="true" name="migrateCollection" id="_1497688667398245"/>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_1497688667398241">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="NAMEVALUEPAIR"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="NAMEVALUEPAIR"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyType="D" compositePrimaryKeyClass="ResourcefunctionFeaturegroupPK" abs="false" class="ResourcefunctionFeaturegroup" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392161">
+        <jpa:attributes>
+            <jpa:id attribute-type="long" v="true" name="resourcefunctionId" id="_1497688667398246">
+                <jpa:column name="RESOURCEFUNCTION_ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTION_FEATUREGROUP"/>
+            </jpa:id>
+            <jpa:id attribute-type="long" v="true" name="featuregroupId" id="_1497688667398247">
+                <jpa:column name="FEATUREGROUP_ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTION_FEATUREGROUP"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="RESOURCEFUNCTION_FEATUREGROUP"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyType="D" compositePrimaryKeyClass="ResourcefunctionRelatedpartyPK" abs="false" class="ResourcefunctionRelatedparty" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392162">
+        <jpa:attributes>
+            <jpa:many-to-one optional="false" primaryKey="false" connected-entity-id="_1497688667392163" connected-attribute-id="_1497688667399254" v="true" name="relatedparty" id="_1497688667399250">
+                <jpa:join-column name="RELATEDPARTY_ID" rc="ID" unique="false" nullable="true" insertable="false" updatable="false"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="long" v="true" name="resourcefunctionId" id="_1497688667399248">
+                <jpa:column name="RESOURCEFUNCTION_ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTION_RELATEDPARTY"/>
+            </jpa:id>
+            <jpa:id attribute-type="String" v="true" name="relatedpartyId" id="_1497688667399249">
+                <jpa:column name="RELATEDPARTY_ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTION_RELATEDPARTY" length="255"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="RESOURCEFUNCTION_RELATEDPARTY"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="RelatedpartyPK" abs="false" class="Relatedparty" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392163">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="href" id="_1497688667399252">
+                <jpa:column name="HREF" unique="false" nullable="true" insertable="true" updatable="true" table="RELATEDPARTY" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="role" id="_1497688667399253">
+                <jpa:column name="ROLE" unique="false" nullable="true" insertable="true" updatable="true" table="RELATEDPARTY" length="255"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667392162" connected-attribute-id="_1497688667399250" v="true" name="resourcefunctionRelatedpartyCollection" id="_1497688667399254"/>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1497688667399251">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="RELATEDPARTY" length="255"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="RELATEDPARTY"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="RequestheaderPK" abs="false" class="Requestheader" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392164">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="name" id="_1497688667399256">
+                <jpa:column name="NAME" unique="false" nullable="true" insertable="true" updatable="true" table="REQUESTHEADER" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="value" id="_1497688667399257">
+                <jpa:column name="VALUE" unique="false" nullable="true" insertable="true" updatable="true" table="REQUESTHEADER" length="255"/>
+            </jpa:basic>
+            <jpa:many-to-many collection-type="java.util.List" connected-entity-id="_1497688667392159" connected-attribute-id="_1497688667398239" v="true" name="responseCollection" id="_1497688667399258">
+                <jpa:join-table name="RESPONSE_REQUESTHEADER">
+                    <jpa:join-column name="HEADER_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="RESPONSE_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </jpa:join-table>
+            </jpa:many-to-many>
+            <jpa:many-to-many own="true" collection-type="java.util.List" connected-entity-id="_1497688667392174" connected-attribute-id="_1497688667400305" v="true" name="requestCollection" id="_1497688667399259"/>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_1497688667399255">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="REQUESTHEADER"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="REQUESTHEADER"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="FeaturegroupPK" abs="false" class="Featuregroup" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392165">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="name" id="_1497688667400261">
+                <jpa:column name="NAME" unique="false" nullable="true" insertable="true" updatable="true" table="FEATUREGROUP" length="255"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667392157" connected-attribute-id="_1497688667397228" v="true" name="featuregroupCharacteristicCollection" id="_1497688667400263"/>
+            <jpa:many-to-many own="true" collection-type="java.util.List" connected-entity-id="_1497688667392176" connected-attribute-id="_1497688667400326" v="true" name="featureCollection" id="_1497688667400262"/>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_1497688667400260">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="FEATUREGROUP"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="FEATUREGROUP"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="SaprefPK" abs="false" class="Sapref" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392166">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="href" id="_1497688667400265">
+                <jpa:column name="HREF" unique="false" nullable="true" insertable="true" updatable="true" table="SAPREF" length="255"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667391149" connected-attribute-id="_1497688667396203" v="true" name="migrateSaprefCollection" id="_1497688667400266"/>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667391149" connected-attribute-id="_1497688667396204" v="true" name="migrateSaprefCollection1" id="_1497688667400267"/>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667392171" connected-attribute-id="_1497688667400292" v="true" name="resourcefunctionSaprefCollection" id="_1497688667400268"/>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1497688667400264">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="SAPREF" length="255"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="SAPREF"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="MigratePK" abs="false" class="Migrate" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392167">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="adminstatemodification" id="_1497688667400270">
+                <jpa:column name="ADMINSTATEMODIFICATION" unique="false" nullable="true" insertable="true" updatable="true" table="MIGRATE"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="completionmode" id="_1497688667400271">
+                <jpa:column name="COMPLETIONMODE" unique="false" nullable="true" insertable="true" updatable="true" table="MIGRATE"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="href" id="_1497688667400272">
+                <jpa:column name="HREF" unique="false" nullable="true" insertable="true" updatable="true" table="MIGRATE" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="migratestatus" id="_1497688667400273">
+                <jpa:column name="MIGRATESTATUS" unique="false" nullable="true" insertable="true" updatable="true" table="MIGRATE"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="priority" id="_1497688667400274">
+                <jpa:column name="PRIORITY" unique="false" nullable="true" insertable="true" updatable="true" table="MIGRATE"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="starttime" id="_1497688667400275">
+                <jpa:column name="STARTTIME" unique="false" nullable="true" insertable="true" updatable="true" table="MIGRATE" length="255"/>
+            </jpa:basic>
+            <jpa:many-to-one primaryKey="false" connected-entity-id="_1497688667392150" connected-attribute-id="_1497688667396207" v="true" name="locationId" id="_1497688667400278">
+                <jpa:join-column name="LOCATION_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667391149" connected-attribute-id="_1497688667396202" v="true" name="migrateSaprefCollection" id="_1497688667400277"/>
+            <jpa:many-to-many collection-type="java.util.List" connected-entity-id="_1497688667392160" connected-attribute-id="_1497688667398245" v="true" name="namevaluepairCollection" id="_1497688667400276">
+                <jpa:join-table name="MIGRATE_NAMEVALUEPAIR">
+                    <jpa:join-column name="MIGRATE_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="CHARACTERISTICS_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </jpa:join-table>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1497688667400269">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="MIGRATE" length="255"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="MIGRATE"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyType="D" compositePrimaryKeyClass="ResourcefunctionFeaturePK" abs="false" class="ResourcefunctionFeature" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392168">
+        <jpa:attributes>
+            <jpa:many-to-one optional="false" primaryKey="false" connected-entity-id="_1497688667392176" connected-attribute-id="_1497688667401327" v="true" name="feature" id="_1497688667400281">
+                <jpa:join-column name="FEATURE_ID" rc="ID" unique="false" nullable="true" insertable="false" updatable="false"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="long" v="true" name="resourcefunctionId" id="_1497688667400279">
+                <jpa:column name="RESOURCEFUNCTION_ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTION_FEATURE"/>
+            </jpa:id>
+            <jpa:id attribute-type="long" v="true" name="featureId" id="_1497688667400280">
+                <jpa:column name="FEATURE_ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTION_FEATURE"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="RESOURCEFUNCTION_FEATURE"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyType="D" compositePrimaryKeyClass="ResourcefunctionResourcefunctionPK" abs="false" class="ResourcefunctionResourcefunction" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392169">
+        <jpa:attributes>
+            <jpa:many-to-one optional="false" primaryKey="false" connected-entity-id="_1497688667392175" connected-attribute-id="_1497688667400319" v="true" name="resourcefunction" id="_1497688667400284">
+                <jpa:join-column name="SUPPORTINGRESOURCEFUNCTION_ID" rc="ID" unique="false" nullable="true" insertable="false" updatable="false"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="long" v="true" name="resourcefunctionId" id="_1497688667400282">
+                <jpa:column name="RESOURCEFUNCTION_ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTION_RESOURCEFUNCTION"/>
+            </jpa:id>
+            <jpa:id attribute-type="long" v="true" name="supportingresourcefunctionId" id="_1497688667400283">
+                <jpa:column name="SUPPORTINGRESOURCEFUNCTION_ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTION_RESOURCEFUNCTION"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="RESOURCEFUNCTION_RESOURCEFUNCTION"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="SchedulerefPK" abs="false" class="Scheduleref" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392170">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="href" id="_1497688667400286">
+                <jpa:column name="HREF" unique="false" nullable="true" insertable="true" updatable="true" table="SCHEDULEREF" length="255"/>
+            </jpa:basic>
+            <jpa:many-to-one primaryKey="false" connected-entity-id="_1497688667392175" connected-attribute-id="_1497688667400320" v="true" name="resourcefunctionconfigId" id="_1497688667400288">
+                <jpa:join-column name="RESOURCEFUNCTIONCONFIG_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667392172" connected-attribute-id="_1497688667400295" v="true" name="resourcefunctionSchedulerefCollection" id="_1497688667400289"/>
+            <jpa:many-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667392158" connected-attribute-id="_1497688667397235" v="true" name="scaleCollection" id="_1497688667400287"/>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1497688667400285">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="SCHEDULEREF" length="255"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="SCHEDULEREF"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyType="D" compositePrimaryKeyClass="ResourcefunctionSaprefPK" abs="false" class="ResourcefunctionSapref" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392171">
+        <jpa:attributes>
+            <jpa:many-to-one optional="false" primaryKey="false" connected-entity-id="_1497688667392166" connected-attribute-id="_1497688667400268" v="true" name="sapref" id="_1497688667400292">
+                <jpa:join-column name="SAP_ID" rc="ID" unique="false" nullable="true" insertable="false" updatable="false"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="long" v="true" name="resourcefunctionId" id="_1497688667400290">
+                <jpa:column name="RESOURCEFUNCTION_ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTION_SAPREF"/>
+            </jpa:id>
+            <jpa:id attribute-type="String" v="true" name="sapId" id="_1497688667400291">
+                <jpa:column name="SAP_ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTION_SAPREF" length="255"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="RESOURCEFUNCTION_SAPREF"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyType="D" compositePrimaryKeyClass="ResourcefunctionSchedulerefPK" abs="false" class="ResourcefunctionScheduleref" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392172">
+        <jpa:attributes>
+            <jpa:many-to-one optional="false" primaryKey="false" connected-entity-id="_1497688667392170" connected-attribute-id="_1497688667400289" v="true" name="scheduleref" id="_1497688667400295">
+                <jpa:join-column name="SCHEDULE_ID" rc="ID" unique="false" nullable="true" insertable="false" updatable="false"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="long" v="true" name="resourcefunctionId" id="_1497688667400293">
+                <jpa:column name="RESOURCEFUNCTION_ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTION_SCHEDULEREF"/>
+            </jpa:id>
+            <jpa:id attribute-type="String" v="true" name="scheduleId" id="_1497688667400294">
+                <jpa:column name="SCHEDULE_ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTION_SCHEDULEREF" length="255"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="RESOURCEFUNCTION_SCHEDULEREF"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="ConnectivityPK" abs="false" class="Connectivity" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392173">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="relationship" id="_1497688667400297">
+                <jpa:column name="RELATIONSHIP" unique="false" nullable="true" insertable="true" updatable="true" table="CONNECTIVITY" length="255"/>
+            </jpa:basic>
+            <jpa:many-to-one primaryKey="false" connected-entity-id="_1497688667392152" connected-attribute-id="_1497688667396213" v="true" name="targetId" id="_1497688667400299">
+                <jpa:join-column name="TARGET_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:many-to-one primaryKey="false" connected-entity-id="_1497688667392152" connected-attribute-id="_1497688667396214" v="true" name="sourceId" id="_1497688667400300">
+                <jpa:join-column name="SOURCE_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667392151" connected-attribute-id="_1497688667396210" v="true" name="resourcefunctionConnectivityCollection" id="_1497688667400298"/>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_1497688667400296">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="CONNECTIVITY"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="CONNECTIVITY"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="RequestPK" abs="false" class="Request" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392174">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="body" id="_1497688667400302">
+                <jpa:column name="BODY" unique="false" nullable="true" insertable="true" updatable="true" table="REQUEST" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="method" id="_1497688667400303">
+                <jpa:column name="METHOD" unique="false" nullable="true" insertable="true" updatable="true" table="REQUEST" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="reqTo" id="_1497688667400304">
+                <jpa:column name="REQ_TO" unique="false" nullable="true" insertable="true" updatable="true" table="REQUEST" length="255"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667391147" connected-attribute-id="_1497688667396188" v="true" name="monitorCollection" id="_1497688667400306"/>
+            <jpa:many-to-many collection-type="java.util.List" connected-entity-id="_1497688667392164" connected-attribute-id="_1497688667399259" v="true" name="requestheaderCollection" id="_1497688667400305">
+                <jpa:join-table name="REQUEST_REQUESTHEADER">
+                    <jpa:join-column name="REQUEST_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="HEADER_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </jpa:join-table>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_1497688667400301">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="REQUEST"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="REQUEST"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="ResourcefunctionPK" abs="false" class="Resourcefunction" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392175">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="automodification" id="_1497688667400308">
+                <jpa:column name="AUTOMODIFICATION" unique="false" nullable="true" insertable="true" updatable="true" table="RESOURCEFUNCTION"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="description" id="_1497688667400309">
+                <jpa:column name="DESCRIPTION" unique="false" nullable="true" insertable="true" updatable="true" table="RESOURCEFUNCTION" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="href" id="_1497688667400310">
+                <jpa:column name="HREF" unique="false" nullable="true" insertable="true" updatable="true" table="RESOURCEFUNCTION" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="name" id="_1497688667400311">
+                <jpa:column name="NAME" unique="false" nullable="true" insertable="true" updatable="true" table="RESOURCEFUNCTION" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="priority" id="_1497688667400312">
+                <jpa:column name="PRIORITY" unique="false" nullable="true" insertable="true" updatable="true" table="RESOURCEFUNCTION"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="role" id="_1497688667400313">
+                <jpa:column name="ROLE" unique="false" nullable="true" insertable="true" updatable="true" table="RESOURCEFUNCTION" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="state" id="_1497688667400314">
+                <jpa:column name="STATE" unique="false" nullable="true" insertable="true" updatable="true" table="RESOURCEFUNCTION"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="substate" id="_1497688667400315">
+                <jpa:column name="SUBSTATE" unique="false" nullable="true" insertable="true" updatable="true" table="RESOURCEFUNCTION" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="type" id="_1497688667400316">
+                <jpa:column name="TYPE" unique="false" nullable="true" insertable="true" updatable="true" table="RESOURCEFUNCTION" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="version" id="_1497688667400317">
+                <jpa:column name="VERSION" unique="false" nullable="true" insertable="true" updatable="true" table="RESOURCEFUNCTION" length="255"/>
+            </jpa:basic>
+            <jpa:many-to-one primaryKey="false" connected-entity-id="_1497688667392153" connected-attribute-id="_1497688667396217" v="true" name="locationId" id="_1497688667400321">
+                <jpa:join-column name="LOCATION_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:many-to-one primaryKey="false" connected-entity-id="_1497688667392177" connected-attribute-id="_1497688667401330" v="true" name="resourcefunctionspecificationId" id="_1497688667400322">
+                <jpa:join-column name="RESOURCEFUNCTIONSPECIFICATION_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667392169" connected-attribute-id="_1497688667400284" v="true" name="resourcefunctionResourcefunctionCollection" id="_1497688667400319"/>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667392170" connected-attribute-id="_1497688667400288" v="true" name="schedulerefCollection" id="_1497688667400320"/>
+            <jpa:many-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667391146" connected-attribute-id="_1497688667396182" v="true" name="characteristicCollection" id="_1497688667400318"/>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_1497688667400307">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTION"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="RESOURCEFUNCTION"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="FeaturePK" abs="false" class="Feature" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392176">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="name" id="_1497688667400324">
+                <jpa:column name="NAME" unique="false" nullable="true" insertable="true" updatable="true" table="FEATURE" length="255"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667392168" connected-attribute-id="_1497688667400281" v="true" name="resourcefunctionFeatureCollection" id="_1497688667401327"/>
+            <jpa:many-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667391146" connected-attribute-id="_1497688667396181" v="true" name="characteristicCollection" id="_1497688667400325"/>
+            <jpa:many-to-many collection-type="java.util.List" connected-entity-id="_1497688667392165" connected-attribute-id="_1497688667400262" v="true" name="featuregroupCollection" id="_1497688667400326">
+                <jpa:join-table name="FEATUREGROUP_FEATURE">
+                    <jpa:join-column name="LISTOFFEATURES_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="FEATUREGROUP_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </jpa:join-table>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_1497688667400323">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="FEATURE"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="FEATURE"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="ResourcefunctionspecificationPK" abs="false" class="Resourcefunctionspecification" v="true" m="false" rootElement="_1497688667391145" id="_1497688667392177">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="href" id="_1497688667401329">
+                <jpa:column name="HREF" unique="false" nullable="true" insertable="true" updatable="true" table="RESOURCEFUNCTIONSPECIFICATION" length="255"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1497688667392175" connected-attribute-id="_1497688667400322" v="true" name="resourcefunctionCollection" id="_1497688667401330"/>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1497688667401328">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="RESOURCEFUNCTIONSPECIFICATION" length="255"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="RESOURCEFUNCTIONSPECIFICATION"/>
+    </jpa:entity>
+    <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
+ * This file was generated by the Jeddict
+ */</jpa:snp>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_1497693857223391">
+            <i ref="_1497688667392163" x="3948" y="833"/>
+            <i ref="_1497688667392164" x="3444" y="833"/>
+            <i ref="_1497688667392161" x="4618" y="833"/>
+            <i ref="_1497688667392162" x="4285" y="1296"/>
+            <i ref="_1497688667392160" x="2015" y="559"/>
+            <i ref="_1497688667392169" x="731" y="1296"/>
+            <i ref="_1497688667392167" x="1757" y="833"/>
+            <i ref="_1497688667392168" x="32" y="32"/>
+            <i ref="_1497688667392165" x="731" y="32"/>
+            <i ref="_1497688667392166" x="2504" y="1296"/>
+            <i ref="_1497688667392152" x="3167" y="1296"/>
+            <i ref="_1497688667392174" x="3167" y="559"/>
+            <i ref="_1497688667392153" x="32" y="559"/>
+            <i ref="_1497688667392175" x="366" y="833"/>
+            <i ref="_1497688667392150" x="2015" y="1296"/>
+            <i ref="_1497688667392172" x="1427" y="1296"/>
+            <i ref="_1497688667392151" x="2504" y="559"/>
+            <i ref="_1497688667392173" x="2834" y="833"/>
+            <i ref="_1497688667392170" x="1093" y="833"/>
+            <i ref="_1497688667392171" x="2834" y="1528"/>
+            <i ref="_1497688667391148" x="1757" y="243"/>
+            <i ref="_1497688667391149" x="2263" y="833"/>
+            <i ref="_1497688667391146" x="731" y="559"/>
+            <i ref="_1497688667392158" x="1427" y="559"/>
+            <i ref="_1497688667391147" x="3948" y="1528"/>
+            <i ref="_1497688667392159" x="3691" y="1296"/>
+            <i ref="_1497688667392156" x="5275" y="833"/>
+            <i ref="_1497688667392157" x="1093" y="243"/>
+            <i ref="_1497688667392154" x="1427" y="32"/>
+            <i ref="_1497688667392176" x="366" y="243"/>
+            <i ref="_1497688667392155" x="5019" y="833"/>
+            <i ref="_1497688667392177" x="32" y="1296"/>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>

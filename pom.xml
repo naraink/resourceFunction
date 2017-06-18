@@ -129,7 +129,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <executable>C:\Users\naray\GlassFish_Server\glassfish\bin\asadmin.bat</executable>
+                    <executable>C:\Users\naray\GlassFish\glassfish\bin\asadmin.bat</executable>
                     <arguments>
                         <argument>deploy</argument>
                         <argument>--user=admin</argument>

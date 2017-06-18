@@ -1,22 +1,12 @@
 package org.tmf.dsmapi.resourceFunction.api;
 
-import io.swagger.api.*;
-import io.swagger.model.*;
-
-import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.SecurityContext;
 
 import org.tmf.dsmapi.resourceFunction.model.Heal;
 import org.tmf.dsmapi.resourceFunction.model.Migrate;
 import org.tmf.dsmapi.resourceFunction.model.ResourceFunction;
 import org.tmf.dsmapi.resourceFunction.model.Scale;
-
-import java.util.List;
-import org.tmf.dsmapi.resourceFunction.api.NotFoundException;
-
-import java.io.InputStream;
-
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.SecurityContext;
 
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-06-15T01:04:08.127Z")
 public abstract class ResourceFunctionApiService {

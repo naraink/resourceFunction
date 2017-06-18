@@ -4,7 +4,6 @@
     <!-- JPA provider class -->
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <jta-data-source>jdbc/tmfapi</jta-data-source>
-    <mapping-file>\META-INF\orm.xml</mapping-file>
     <class>org.tmf.dsmapi.resourceFunction.model.ResourceFunctionSpecification</class>
     <class>org.tmf.dsmapi.resourceFunction.model.Feature</class>
     <class>org.tmf.dsmapi.resourceFunction.model.FeatureGroup</class>

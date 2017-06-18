@@ -67,6 +67,7 @@ public abstract class AbstractFacade<T> {
     @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
     public void create(T entity) throws BadUsageException {
         getEntityManager().merge(entity);
+        getEntityManager().flush();
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)    
@@ -91,6 +92,8 @@ public abstract class AbstractFacade<T> {
     }
 
     public T find(Object id) throws UnknownResourceException {
+        System.out.println("FIND FINDING " + id);
+
         T entity = getEntityManager().find(entityClass, id);
         if (entity == null) {
             throw new UnknownResourceException(ExceptionType.UNKNOWN_RESOURCE);

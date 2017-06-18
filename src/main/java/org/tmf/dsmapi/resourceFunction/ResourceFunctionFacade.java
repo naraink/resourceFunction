@@ -21,6 +21,7 @@ import org.tmf.dsmapi.commons.exceptions.UnknownResourceException;
 import org.tmf.dsmapi.resourceFunction.model.*;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.fge.jsonpatch.mergepatch.JsonMergePatch;
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
@@ -45,6 +46,23 @@ public class ResourceFunctionFacade extends AbstractFacade<ResourceFunction> {
     protected EntityManager getEntityManager() {
         return em;
     }
+    
+    public ResourceFunction patchObject(Long id, final ResourceFunction resourceFunctionPatch) throws UnknownResourceException, BadUsageException {
+
+        ResourceFunction resourceFunction = this.find(id);
+        resourceFunctionPatch.setId(id);
+
+        //Create an object mapper
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonNode jsonNode = objectMapper.convertValue(resourceFunctionPatch,JsonNode.class);
+
+        BeanUtils.patch(resourceFunction, resourceFunctionPatch, jsonNode);
+                
+        this.edit(resourceFunction);
+
+        return resourceFunction;
+
+    } 
 
     // Validate mandatory fields and data types during entity creation
 }

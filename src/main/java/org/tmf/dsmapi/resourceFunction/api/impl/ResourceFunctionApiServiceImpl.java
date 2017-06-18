@@ -30,6 +30,7 @@ import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import org.tmf.dsmapi.commons.exceptions.BadUsageException;
+import org.tmf.dsmapi.commons.exceptions.UnknownResourceException;
 import org.tmf.dsmapi.resourceFunction.ResourceFunctionFacade;
 import org.tmf.dsmapi.resourceFunction.api.*;
 
@@ -55,13 +56,18 @@ public class ResourceFunctionApiServiceImpl extends ResourceFunctionApiService {
 
     @Override
     public Response resourceFunctionDelete(String id, SecurityContext securityContext) throws NotFoundException {
-        // do some magic!
-        return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
+        try {
+            resourceFunctionFacade.remove(Long.parseLong(id));
+            
+            return Response.status(Response.Status.NO_CONTENT).build();
+        } catch (UnknownResourceException ex) {
+            Logger.getLogger(ResourceFunctionApiServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return Response.serverError().build();
     }
 
     @Override
     public Response resourceFunctionFind(String fields, SecurityContext securityContext) throws NotFoundException {
-        // do some magic!
         return Response.ok().entity(resourceFunctionFacade.findAll()).build();
     }
 
@@ -85,7 +91,6 @@ public class ResourceFunctionApiServiceImpl extends ResourceFunctionApiService {
 
     @Override
     public Response resourceFunctionHealPatch(String id, Heal serviceHeal, SecurityContext securityContext) throws NotFoundException {
-        // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
 
@@ -115,8 +120,15 @@ public class ResourceFunctionApiServiceImpl extends ResourceFunctionApiService {
 
     @Override
     public Response resourceFunctionPatch(String id, ResourceFunction resourceFunction, SecurityContext securityContext) throws NotFoundException {
-        // do some magic!
-        return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
+        try {
+            resourceFunctionFacade.patchObject(Long.parseLong(id), resourceFunction);
+            return Response.ok().entity(resourceFunction).build();
+        } catch (UnknownResourceException ex) {
+            Logger.getLogger(ResourceFunctionApiServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (BadUsageException ex) {
+            Logger.getLogger(ResourceFunctionApiServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return Response.serverError().build();
     }
 
     @Override
@@ -145,7 +157,13 @@ public class ResourceFunctionApiServiceImpl extends ResourceFunctionApiService {
 
     @Override
     public Response resourceFunctionServiceGet(String id, String fields, SecurityContext securityContext) throws NotFoundException {
-        // do some magic!
-        return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
+        try {
+            System.out.println("org.tmf.dsmapi.resourceFunction.api.impl.ResourceFunctionApiServiceImpl.resourceFunctionServiceGet() FINDING " + id);
+            return Response.ok().entity(resourceFunctionFacade.find(Long.parseLong(id))).build();
+        } catch (UnknownResourceException ex) {
+            Logger.getLogger(ResourceFunctionApiServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            return Response.noContent().build();
+
     }
 }
